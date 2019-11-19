@@ -1,5 +1,6 @@
 ---
 - include: backup_galera.yml
 - include: backup_sshkey.yml
+  when: osa_backup_sshkey | bool
 - include: backup_retention.yml
 - include: backup_cron.yml
