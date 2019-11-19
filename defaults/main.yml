@@ -1,4 +1,6 @@
 ---
+osa_backup_setup_ssh_key: False
+
 osa_backup_galera_dir: /openstack/backup/galera
 osa_backup_remote_galera_dir: "{{ osa_backup_galera_dir }}"
 osa_backup_galera_retention_day: 7

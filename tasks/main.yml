@@ -1,4 +1,6 @@
 ---
+- include: setup_ssh_key.yml
+  when: osa_backup_setup_ssh_key | bool
 - include: backup_galera.yml
 - include: backup_sshkey.yml
   when: osa_backup_sshkey | bool
