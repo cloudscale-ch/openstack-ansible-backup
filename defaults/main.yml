@@ -1,6 +1,11 @@
 ---
 osa_backup_setup_ssh_key: False
 
+osa_backup_src_address: "{{ ansible_all_ipv4_addresses
+                            | ipaddr(hostvars[groups['galera_all'] | last].ansible_host + '/24')
+                            | first
+                            | default(ansible_default_ipv4.address) }}"
+
 osa_backup_galera_dir: /openstack/backup/galera
 osa_backup_remote_galera_dir: "{{ osa_backup_galera_dir }}"
 osa_backup_galera_retention_day: 7
