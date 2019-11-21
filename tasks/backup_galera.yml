@@ -1,4 +1,9 @@
 ---
+- name: Create backup directory
+  file:
+    path: "{{ osa_backup_galera_dir }}"
+    state: "directory"
+
 - name: Backup galera database
   shell: >
     ssh root@{{ hostvars[groups['galera_all'] | last].ansible_host }}
